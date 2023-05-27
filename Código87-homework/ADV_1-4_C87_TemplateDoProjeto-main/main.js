@@ -10,8 +10,8 @@ ctx= canvas.getContext("2d");
 
 ctx.beginPath();
 ctx.strokeStyle ="purple";
-ctx.LineWidht = 1;
-ctx.rect(x = 150, y = 143, width = 430, height = 200);
+ctx.lineWidth = 2;
+ctx.rect(x = 120, y = 153, width = 430, height = 200);
 ctx.stroke();
 
 /*
@@ -23,9 +23,9 @@ with 40 como radius, 0 startAngle e 2 * Math.PI endAngle.
 */
 
 ctx. beginPath();
-ctx.strokeStyle ="blue";
-ctx.LineWidht = 5;
-ctx.arc(x = 230, y = 240, radius=40, startAngle = 0, endAngle = 2 * Math.PI);
+ctx.strokeStyle = "blue";
+ctx.lineWidth = 5;
+ctx.arc(x = 210, y = 240, radius=40, startAngle = 0, endAngle = 2 * Math.PI);
 ctx.stroke();
 
 
@@ -33,8 +33,8 @@ ctx.stroke();
 
 ctx. beginPath();
 ctx.strokeStyle ="black";
-ctx.LineWidht = 5;
-ctx.arc(x = 298, y =234, radius=40, startAngle = 0, endAngle = 2 * Math.PI);
+ctx.lineWidth = 5;
+ctx.arc(x = 320, y =241, radius=40, startAngle = 0, endAngle = 2 * Math.PI);
 ctx.stroke();
 
 
@@ -44,10 +44,9 @@ ctx.stroke();
 
 ctx. beginPath();
 ctx.strokeStyle ="red";
-ctx.LineWidht = 5;
-ctx.arc(x = 370, y = 245, radius = 40, startAngle = 0, endAngle = 2 * Math.PI);
+ctx.lineWidth = 5;
+ctx.arc(x = 430, y =235, radius=40, startAngle = 0, endAngle = 2 * Math.PI);
 ctx.stroke();
-
 
 
 
@@ -55,17 +54,15 @@ ctx.stroke();
 
 ctx. beginPath();
 ctx.strokeStyle ="orange";
-ctx.LineWidht = 5;
-ctx.arc(x = 274, y = 308, radius=40, startAngle = 0, endAngle = 2 * Math.PI);
+ctx.lineWidth = 5;
+ctx.arc(x = 264, y =291 , radius=40, startAngle = 0, endAngle = 2 * Math.PI);
 ctx.stroke();
-
-
 
 
 // De modo parecido, crie um círculo verde com posição 400 e 250
 
 ctx. beginPath();
 ctx.strokeStyle ="green";
-ctx.LineWidht = 5;
-ctx.arc(x = 325, y = 308, radius=40, startAngle = 0, endAngle = 2 * Math.PI);
+ctx.lineWidth = 5;
+ctx.arc(x = 378, y = 287, radius=40, startAngle = 0, endAngle = 2 * Math.PI);
 ctx.stroke();
