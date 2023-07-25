@@ -3,13 +3,12 @@ canvas = document.getElementById("myCanvas");
 
 ctx= canvas.getContext("2d");
 
-color = "blue"; 
+color = "black"; 
+ var widhtLine = 1;
 
-ctx.beginPath();
-ctx.strokeStyle = color;
-ctx.lineWidth = 5;
-ctx.arc(200, 200, 40 ,0 , 2*Math.PI);
-ctx.stroke();
+ var mouseEvent = "empty"
+ var lastPositionX, lastPositionY;
+
 
 canvas.addEventListener("mousedown", my_mousedown);
 
@@ -19,24 +18,54 @@ function my_mousedown(e)
     //início da atividade adicional
     color = document.getElementById("color").value;
     console.log(color);
+    widhtLine = document.getElementById("widhtLine").value
     //fim da atividade adicional
+
+    mouseEvent = "mouseDown";
     
-     mouse_x = e.clientX - canvas.offsetLeft;
-     mouse_y = e.clientY - canvas.offsetTop;
-
-    console.log("X = " + mouse_x + " ,Y =  " + mouse_y);
-    circle(mouse_x , mouse_y);    
+    
 }
 
-function circle(mouse_x , mouse_y)
+canvas.addEventListener("mousemove", myMouseMove);
+function myMouseMove(e)
 {
-ctx.beginPath();
-ctx.strokeStyle = color;
-ctx.lineWidth = 2;
-ctx.arc(mouse_x, mouse_y, 40 ,0 , 2*Math.PI);
-ctx.stroke();
+    PositionMouseX = e.clientX - canvas.offseLeft;
+    PositionMouseY = e.clientY - canvas.offseTop;
+
+    if (mouseEvent == "mouseDown") {
+
+        ctx.beginPath();
+        ctx.strokeStyle = color;
+        ctx.linewidht = widhtLine;
+
+        console.log("last position of x and y coordinates = ")
+        console.log("x = " + PositionMouseX + "y = " + PositionMouseY );
+        ctx.moveTo(lastPositionX, lastPositionY);
+
+        console.log("Current position of x and y coodinates = ");
+        console.log("x = " + PositionMouseX + "y = " + PositionMouseY );
+        ctx.lineTo(PositionMouseX, PositionMouseY);
+        ctx.stroke();
+    }
+
+    lastPositionX = PositionMouseX;
+    lastPositionY = PositionMouseY;
+
+
+
 }
 
+canvas.addEventListener("mouseup", myMouseUp);
+function myMouseUp(e)
+{
+    mouseEvent = "mouseUP";
+}
+
+anvas.addEventListener("mouseleave", myMouseLeave);
+function myMouseLeave(e)
+{
+    mouseEvent = "mouseleave";
+}
 //atividade adicional
 
 function clearArea()
