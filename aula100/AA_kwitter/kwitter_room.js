@@ -4,7 +4,7 @@
 const firebaseConfig = {
   apiKey: "AIzaSyBcYfcscpXKi7SJA_tURrYRdVaw28czB0o",
   authDomain: "kwiter-2-80de9.firebaseapp.com",
-  databaseURL:"https://kwiter-2-80de9-default-rtdb.firebaseio.com/",
+  databaseURL: "https://kwiter-2-80de9-default-rtdb.firebaseio.com",
   projectId: "kwiter-2-80de9",
   storageBucket: "kwiter-2-80de9.appspot.com",
   messagingSenderId: "267170240511",
@@ -21,11 +21,10 @@ document.getElementById("user_name").innerHTML = "Bem-vindo(a), " + user_name + 
 
 function addRoom()
 {
+  console.log("função addRoom")
   room_name = document.getElementById("room_name").value;
 
-  firebase.database().ref("/").child(room_name).update({
-    purpose : "adicionando nome da sala"
-  });
+  firebase.database().ref("/").child(room_name).update({ purpose : "adicionar nome de sala" });
 
     localStorage.setItem("room_name", room_name);
     
@@ -57,5 +56,5 @@ function redirectToRoomName(name)
 function logout() {
 localStorage.removeItem("user_name");
 localStorage.removeItem("room_name");
-    window.location = "kwitter.html";
+    window.location = "index.html";
 }
